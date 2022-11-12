@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fifth lesson</title>
+</head>
+
+<body>
+    <script>
+        function padString(userName, userNumber, userSymbol){
+            var magnitude = userName.length;
+            var characterAssignment = '';
+            if (magnitude >= userNumber){
+                console.log(userName)
+            } else {
+                for(var i = magnitude; i >= magnitude && userNumber > i; i++){
+                    characterAssignment+=userSymbol;
+                }
+                console.log(userName+characterAssignment);
+                // console.log(characterAssignment+userName);
+            }
+        }
+        padString('Maksym', 10, '*');
+    </script>
+</body>
+
+</html>
