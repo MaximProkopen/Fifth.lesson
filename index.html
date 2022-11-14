@@ -10,20 +10,23 @@
 
 <body>
     <script>
-        function padString(userName, userNumber, userSymbol){
+        function padString(userName, userNumber, userSymbol, flag) {
             var magnitude = userName.length;
-            var characterAssignment = '';
-            if (magnitude >= userNumber){
-                console.log(userName)
-            } else {
-                for(var i = magnitude; i >= magnitude && userNumber > i; i++){
-                    characterAssignment+=userSymbol;
+            if (magnitude <= userNumber) {
+                for (var i = magnitude; i >= magnitude && userNumber > i; i++) {
+                    if (flag !== true) {
+                        userName = userSymbol + userName;
+                    } else {
+                        userName += userSymbol
+                    }
                 }
-                console.log(userName+characterAssignment);
-                // console.log(characterAssignment+userName);
+                return userName;
+            } else {
+                return userName;
             }
         }
-        padString('Maksym', 10, '*');
+        let result = padString('Maksym', 15, '*', true);
+        console.log(result);
     </script>
 </body>
 
